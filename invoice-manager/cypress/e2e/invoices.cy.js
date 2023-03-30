@@ -42,8 +42,8 @@ describe("Invoices Features", () => {
       .get("select[name=status] option")
       .should("have.length", 2)
       .get("select[name=status]")
-      .select("PAID") // On doit pouvoir sélectionner une option dont la valeur est "PAID" (peu importe le texte)
-      .select("SENT"); // On sélectionne l'option dont la valeur est "SENT" (peu importe le texte)
+      .select("Payée") // On doit pouvoir sélectionner une option dont la valeur est "PAID" (peu importe le texte)
+      .select("Envoyée"); // On sélectionne l'option dont la valeur est "SENT" (peu importe le texte)
     // On cherche ensuite le bouton de soumission dont le texte devrait être "Enregistrer la facture"
 
     cy.contains("Enregistrer la facture")
@@ -57,7 +57,7 @@ describe("Invoices Features", () => {
       );
 
     // Dans cette page, on s'attend maintenant à trouver un tableau qui liste les factures
-    cy.get("table");
+    cy.get("#card");
     // Et notamment une ligne (<tr>) qui décrirait la facture et contiendrait le montant 1200
     cy.contains("1200");
   });

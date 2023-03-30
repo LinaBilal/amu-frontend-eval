@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd app && ng test",
-    "start": "cd app && ng serve --host 0.0.0.0 --disable-host-check --hmr",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "test": "cd invoice-manager && npm run test",
+    "serve": "cd invoice-manager && npm run serve",
+    "cy:run": "cd invoice-manager && npm run cy:run",
+    "cy:open": "cd invoice-manager && npm run cy:open"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,17 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.10.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
